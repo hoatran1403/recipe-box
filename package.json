@@ -20,6 +20,7 @@
   "homepage": "https://github.com/hoatran1403/recipe-box#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
     "marked": "^0.3.6",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
