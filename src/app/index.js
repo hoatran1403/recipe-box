@@ -7,8 +7,7 @@ import { createStore } from 'redux'
 import App from './components/App'
 import rootReducer from './reducers'
 
-//import css
-import bootstrap from './../../node_modules/bootstrap/dist/css/bootstrap.css'
+
 
 const store = createStore(rootReducer)
 

@@ -12,12 +12,17 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015']
                 }
             },
+            {
+              test: /bootstrap.+\.(jsx|js)$/,
+              loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+          },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'

@@ -1,5 +1,9 @@
 import React from 'react'
 
+//import css
+import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import bootstrapjs from 'bootstrap'
+
 class Board extends React.Component {
   render(){
     return(
