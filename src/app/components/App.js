@@ -6,7 +6,7 @@ import ButtonsContainer from '../containers/ButtonsContainer'
 class App extends React.Component {
   render (){
     return(
-      <div>
+      <div className="container">
       <BoardComponent />
       <ButtonsContainer />
       </div>
