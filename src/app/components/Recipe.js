@@ -2,10 +2,21 @@ import React from 'react'
 
 class Recipe extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.handleDelete = this.handleDelete.bind(this)
+    }
+
     ingredients(ingredients) {
         return ingredients.map((ingredient, index) => (
             <li key={index} className="list-group-item">{ingredient}</li>
         ))
+    }
+
+    handleDelete(e){
+        e.preventDefault()
+       
+        this.props.deleteRecipe(this.props.recipe)
     }
 
     render() {
@@ -23,7 +34,7 @@ class Recipe extends React.Component {
                         <ul className="list-group">
                             {this.ingredients(this.props.recipe.ingredients)}
                         </ul>
-                        <button type="button" className="btn btn-danger">Delete</button>&nbsp;
+                        <button type="button" className="btn btn-danger" onClick={this.handleDelete}>Delete</button>&nbsp;
                         <button type="button" className="btn btn-primary">Edit</button>
                     </div>
                 </div>

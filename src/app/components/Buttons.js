@@ -13,13 +13,16 @@ class Buttons extends React.Component {
     e.preventDefault();
 
     const name = this.refs.recipe.value;
-
     const ingredients = this.refs.ingredients.value;
-    // clear user input
+
+    if(name !== ""){
+      // clear user input
     this.refs.recipe.value = '';
     this.refs.ingredients.value = '';
     const recipe = { name, ingredients }
+    
     this.props.addRecipe(recipe)
+    }
   }
 
   render() {

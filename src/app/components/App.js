@@ -7,8 +7,12 @@ class App extends React.Component {
   render (){
     return(
       <div className="container">
-      <BoardComponent />
+      <div className="jumbotron">
+      <h3>Recipe Box</h3>
+       <BoardComponent />
       <ButtonsContainer />
+      </div>
+     
       </div>
     )
   }

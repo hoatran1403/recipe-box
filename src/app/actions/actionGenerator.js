@@ -1,5 +1,4 @@
 export const addRecipe = (recipe) => {
-  console.log(recipe)
   let parsedRecipe = {}
   parsedRecipe.name = recipe.name
   parsedRecipe.ingredients = recipe.ingredients.split(',')
@@ -7,5 +6,12 @@ export const addRecipe = (recipe) => {
      type: 'ADD_RECIPE',
     parsedRecipe
   })
+}
+
+export const deleteRecipe = (recipe) => {
+  return {
+    type: 'DELETE_RECIPE',
+    recipe
+  }
 }
 

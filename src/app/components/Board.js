@@ -9,9 +9,10 @@ class Board extends React.Component {
 
   
   recipeList() {
+    const props = this.props
     return this.props.recipe.map((recipe, index) =>
       (
-        <Recipe key={index} index={index} recipe={recipe} />
+        <Recipe {...props} key={index} index={index} recipe={recipe} />
       )
     )
   }
