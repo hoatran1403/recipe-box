@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import Board from '../components/Board'
 import * as actions from '../actions/actionGenerator'
 
-const mapStateToProps = (state) => (state)
+const mapStateToProps = (state) => state
 const mapDispatchToProps = (dispatch) => ({
     deleteRecipe: (recipe) => (dispatch(actions.deleteRecipe(recipe))) 
 })

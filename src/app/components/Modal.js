@@ -15,21 +15,27 @@ class Modal extends React.Component {
         const inputIngredients = this.refs.ingredients.value;
 
         if (inputName !== "") {
-            // clear user input
-            this.refs.recipe.value = '';
-            this.refs.ingredients.value = '';
-            const recipe = { inputName, inputIngredients }
+            // clear user input after add new Recipe
+            if (this.props.name == "Add") {
+                this.refs.recipe.value = '';
+                this.refs.ingredients.value = '';
+            }
+
+            const recipe = { name: inputName, ingredients: inputIngredients }
+            console.log(recipe)
             this.props.actionHandle(recipe)
         }
     }
 
     render() {
         let defaultRecipe = ""
+        let defaultIngredients = ""
         if (this.props.recipe) {
-            defaultRecipe = this.props.recipe.name
-            
+            const {name, ingredients } = this.props.recipe
+            defaultRecipe = name
+            defaultIngredients = ingredients
         }
-        
+
         return (
             <div className="modal fade" id={this.props.modalName} role="dialog">
                 <div className="modal-dialog">
@@ -47,7 +53,7 @@ class Modal extends React.Component {
                                 <input type="text" className="form-control" ref="recipe" defaultValue={defaultRecipe} placeholder="Recipe Name" />
 
                                 <label htmlFor="ingredients">Ingredients</label>
-                                <input type="text" className="form-control" ref="ingredients" placeholder="Enter Ingredients, Separated, By Commas" />
+                                <input type="text" className="form-control" ref="ingredients" defaultValue={defaultIngredients} placeholder="Enter Ingredients, Separated, By Commas" />
                             </div>
 
                         </div>

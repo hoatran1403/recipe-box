@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch,props) => {
     }
     else if(props.name == "Edit"){
         return {
-            actionHandle: (recipe) => dispatch(actions.addRecipe(recipe))
+            actionHandle: (recipe) => dispatch(actions.editRecipe(recipe))
         }
     }
 

@@ -9,14 +9,17 @@ class Recipe extends React.Component {
     }
 
     ingredients(ingredients) {
-        return ingredients.map((ingredient, index) => (
+        if(ingredients){
+            const parsedIngredients = ingredients.split(',')
+        return parsedIngredients.map((ingredient, index) => (
             <li key={index} className="list-group-item">{ingredient}</li>
         ))
+        }
+        
     }
 
     handleDelete(e) {
         e.preventDefault()
-
         this.props.deleteRecipe(this.props.recipe)
     }
 
