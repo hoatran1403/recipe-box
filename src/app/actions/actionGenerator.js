@@ -8,10 +8,13 @@ export const addRecipe = (recipe) => {
   })
 }
 
-export const deleteRecipe = (recipe) => {
-  return {
+export const deleteRecipe = (recipe) => ({
     type: 'DELETE_RECIPE',
     recipe
-  }
-}
+})
+
+export const editRecipe = (recipe) => ({
+  type: 'EDIT_RECIPE',
+  recipe
+})
 

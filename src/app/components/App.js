@@ -1,6 +1,6 @@
 import React from 'react'
 import BoardComponent from '../containers/BoardContainer'
-import ButtonsContainer from '../containers/ButtonsContainer'
+import ModalContainer from '../containers/ModalContainer'
 
 
 class App extends React.Component {
@@ -10,7 +10,8 @@ class App extends React.Component {
       <div className="jumbotron">
       <h3>Recipe Box</h3>
        <BoardComponent />
-      <ButtonsContainer />
+       <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add Recipe</button>
+        <ModalContainer name="Add"/>
       </div>
      
       </div>
