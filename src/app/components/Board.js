@@ -6,8 +6,6 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import bootstrapjs from 'bootstrap'
 
 class Board extends React.Component {
-
-  
   recipeList() {
     const props = this.props
     return this.props.recipe.map((recipe, index) =>
@@ -24,7 +22,6 @@ class Board extends React.Component {
           {this.recipeList()}
         </div>
       </div>
-
     )
   }
 }

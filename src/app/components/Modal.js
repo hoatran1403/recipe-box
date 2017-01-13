@@ -11,22 +11,27 @@ class Modal extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        const name = this.refs.recipe.value;
-        const ingredients = this.refs.ingredients.value;
+        const inputName = this.refs.recipe.value;
+        const inputIngredients = this.refs.ingredients.value;
 
-        if (name !== "") {
+        if (inputName !== "") {
             // clear user input
             this.refs.recipe.value = '';
             this.refs.ingredients.value = '';
-            const recipe = { name, ingredients }
-
+            const recipe = { inputName, inputIngredients }
             this.props.actionHandle(recipe)
         }
     }
 
     render() {
+        let defaultRecipe = ""
+        if (this.props.recipe) {
+            defaultRecipe = this.props.recipe.name
+            
+        }
+        
         return (
-            <div className="modal fade" id="myModal" role="dialog">
+            <div className="modal fade" id={this.props.modalName} role="dialog">
                 <div className="modal-dialog">
                     {/*Modal content*/}
                     <div className="modal-content">
@@ -39,7 +44,7 @@ class Modal extends React.Component {
 
                             <div className="form-group">
                                 <label htmlFor="recipe">Recipe</label>
-                                <input type="text" className="form-control" ref="recipe" placeholder="Recipe Name" />
+                                <input type="text" className="form-control" ref="recipe" defaultValue={defaultRecipe} placeholder="Recipe Name" />
 
                                 <label htmlFor="ingredients">Ingredients</label>
                                 <input type="text" className="form-control" ref="ingredients" placeholder="Enter Ingredients, Separated, By Commas" />

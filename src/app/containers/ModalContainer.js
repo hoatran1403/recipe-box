@@ -3,7 +3,9 @@ import Modal from '../components/Modal'
 import * as actions from '../actions/actionGenerator'
 
 
-const mapStateToProps = (state, props) => ({state,name: props.name})
+const mapStateToProps = (state, props) => ({
+    name: props.name
+})
 
 const mapDispatchToProps = (dispatch,props) => {
     if(props.name == "Add"){
@@ -21,5 +23,4 @@ const mapDispatchToProps = (dispatch,props) => {
 
 
 const ModalContainer = connect(mapStateToProps,mapDispatchToProps)(Modal)
-
 export default ModalContainer
