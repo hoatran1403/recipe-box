@@ -3,7 +3,7 @@ let nextId = 4
 export const addRecipe = (recipe) => {
   return ({
     id: nextId++,
-     type: 'ADD_RECIPE',
+    type: 'ADD_RECIPE',
     recipe
   })
 }

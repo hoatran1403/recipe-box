@@ -10,7 +10,14 @@ import rootReducer from './reducers'
 
 const loggerMiddleware = createLogger();
 
-const store = createStore(rootReducer, applyMiddleware(loggerMiddleware))
+//get localstorage state
+const persistedState = localStorage.getItem("_user_recipes_") ? JSON.parse(localStorage.getItem("_user_recipes_")) : {}
+
+const store = createStore(rootReducer,persistedState, applyMiddleware(loggerMiddleware))
+
+store.subscribe(() => {
+  localStorage.setItem("_user_recipes_", JSON.stringify(store.getState()))
+})
 
 render(
   <Provider store={store}>

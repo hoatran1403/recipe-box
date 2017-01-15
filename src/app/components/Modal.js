@@ -13,16 +13,16 @@ class Modal extends React.Component {
 
         const inputName = this.refs.recipe.value;
         const inputIngredients = this.refs.ingredients.value;
-
+        let recipe
         if (inputName !== "") {
             // clear user input after add new Recipe
             if (this.props.name == "Add") {
-                this.refs.recipe.value = '';
-                this.refs.ingredients.value = '';
+                this.refs.recipe.value = ''
+                this.refs.ingredients.value = ''
+                recipe = {name: inputName, ingredients: inputIngredients }
+            } else {
+                recipe = {id: this.props.recipe.id, name: inputName, ingredients: inputIngredients }
             }
-
-            const recipe = {id: this.props.recipe.id, name: inputName, ingredients: inputIngredients }
-            
             this.props.actionHandle(recipe)
         }
     }
