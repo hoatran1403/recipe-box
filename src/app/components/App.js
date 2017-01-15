@@ -1,5 +1,5 @@
 import React from 'react'
-import RecipeContainer from '../containers/RecipeContainer'
+import BoardContainer from '../containers/BoardContainer'
 import ModalContainer from '../containers/ModalContainer'
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
       <div className="container">
         <div className="jumbotron">
           <h3>Recipe Box</h3>
-          <RecipeContainer />
+          <BoardContainer />
           <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">Add Recipe</button>
           <ModalContainer name="Add" modalName="addModal"/>
         </div>

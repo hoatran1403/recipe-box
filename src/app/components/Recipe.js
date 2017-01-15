@@ -15,7 +15,6 @@ class Recipe extends React.Component {
             <li key={index} className="list-group-item">{ingredient}</li>
         ))
         }
-        
     }
 
     handleDelete(e) {
@@ -29,14 +28,14 @@ class Recipe extends React.Component {
                     <div className="panel-heading">
                         <h4 className="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href={'#collapse' + this.props.index}>
-                                {this.props.recipe.name}
+                                 {this.props.recipe.name}
                             </a>
                         </h4>
                     </div>
                     <div id={'collapse' + this.props.index} className="panel-collapse collapse">
                         <div className="panel-body">
                             <ul className="list-group">
-                                {this.ingredients( this.props.recipe.ingredients )}
+                                { this.ingredients( this.props.recipe.ingredients ) }
                             </ul>
                             <button type="button" className="btn btn-danger" onClick={this.handleDelete}>Delete</button>&nbsp;
                         <button type="button" className="btn btn-primary" data-toggle="modal" data-target={"#myModal" + this.props.index}>Edit</button>
@@ -50,7 +49,8 @@ class Recipe extends React.Component {
 
 Recipe.propTypes = {
     index: React.PropTypes.number.isRequired,
-    recipe: React.PropTypes.object.isRequired
+    recipe: React.PropTypes.object.isRequired,
+    deleteRecipe: React.PropTypes.func.isRequired
 }
 
 export default Recipe

@@ -1,15 +1,16 @@
 import React from 'react'
-import RecipeContainer from '../containers/RecipeContainer'
+import Recipe from './Recipe'
 
 //import css
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import bootstrapjs from 'bootstrap'
 
 class Board extends React.Component {
+  
   recipeList() {
-    return this.props.recipe.map((recipe, index) =>{
+    return this.props.recipes.map((recipe, index) =>{
       return  (
-        <RecipeContainer key={index} index={index} recipe={recipe} />
+        <Recipe key={index} index={index} recipe={ recipe } {...this.props}/>
       )
     })
   }
