@@ -41,7 +41,7 @@ class Recipe extends React.Component {
                         <button type="button" className="btn btn-primary" data-toggle="modal" data-target={"#myModal" + this.props.index}>Edit</button>
                         </div>
                     </div>
-                    <ModalContainer name="Edit" recipe = { this.props.recipe } modalName = { "myModal" + this.props.index} />
+                    <ModalContainer name="Edit" {...this.props} modalName = { "myModal" + this.props.index} />
                 </div>
         )
     }

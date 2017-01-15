@@ -21,8 +21,8 @@ class Modal extends React.Component {
                 this.refs.ingredients.value = '';
             }
 
-            const recipe = { name: inputName, ingredients: inputIngredients }
-            console.log(recipe)
+            const recipe = {id: this.props.recipe.id, name: inputName, ingredients: inputIngredients }
+            
             this.props.actionHandle(recipe)
         }
     }
@@ -72,7 +72,9 @@ class Modal extends React.Component {
 
 Modal.PropTypes = {
     name: React.PropTypes.string,
-    actionHandle: React.PropTypes.func.isRequired
+    actionHandle: React.PropTypes.func.isRequired,
+    modalName: React.PropTypes.string,
+    recipe: React.PropTypes.object
 }
 
 export default Modal
